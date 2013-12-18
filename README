@@ -1,0 +1,6 @@
+REQUIREMENTS:
+
+Python Imaging Library;
+PyGTK;
+GTK;
+numpy -- to be removed!;
