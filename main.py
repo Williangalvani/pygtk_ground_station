@@ -17,6 +17,7 @@ class BaseStation():
         self.window = self.builder.get_object("window1")
         self.compass = self.builder.get_object("compass")
         self.horizon = self.builder.get_object("horizon")
+        self.mapframe = self.builder.get_object("frame4")
         self.log = self.builder.get_object("log")
         self.log.set_editable(False)
         self.log.set_wrap_mode(gtk.WRAP_WORD)
@@ -29,12 +30,20 @@ class BaseStation():
         self.mask = Image.open('mask.png').convert('L')
         self.desired_size = None
 
+        from mapviewer import UI
+        self.mapui = UI()
+        print dir(self.mapframe)
+        self.mapframe.remove(self.mapframe.get_child())
+        self.mapframe.add(self.mapui)
+
         self.images = {}
         self.loadImages()
 
         self.update()
         self.window.show_all()
         self.window.connect("destroy", gtk.main_quit)
+
+
         gtk.main()
 
     def loadImages(self):
@@ -91,7 +100,7 @@ class BaseStation():
         self.compass_angle += 2
         self.roll_angle += random.randrange(-2,2);
         self.pitch_angle += random.randrange(-1,1)
-        print type(self.log)
+        #print type(self.log)
         self.log_text("o haay\n")
         #print dir(self.log)
         #print self.pitch_angle,self.roll_angle
