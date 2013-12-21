@@ -1,7 +1,8 @@
 __author__ = 'Will'
 
-import gtk
-import gobject
+
+from gi.repository import GdkPixbuf, Gtk
+
 import random
 from math import cos, sin,radians
 from PIL import Image,ImageOps
@@ -11,7 +12,7 @@ import numpy
 class BaseStation():
 
     def __init__(self):
-        self.builder = gtk.Builder()
+        self.builder = Gtk.Builder()
         self.builder.add_from_file("sub.glade")
 
         self.window = self.builder.get_object("window1")
@@ -20,9 +21,9 @@ class BaseStation():
         self.mapframe = self.builder.get_object("frame4")
         self.log = self.builder.get_object("log")
         self.log.set_editable(False)
-        self.log.set_wrap_mode(gtk.WRAP_WORD)
+        #self.log.set_wrap_mode(Gtk.WRAP_WORD)
         self.logbuffer = self.log.get_buffer()
-        """@type : gtk.TextBuffer"""
+        """@type : Gtk.TextBuffer"""
         self.compass_angle = 0
         self.roll_angle=0
         self.pitch_angle=0
@@ -41,10 +42,10 @@ class BaseStation():
 
         self.update()
         self.window.show_all()
-        self.window.connect("destroy", gtk.main_quit)
+        self.window.connect("destroy", Gtk.main_quit)
 
 
-        gtk.main()
+        Gtk.main()
 
     def loadImages(self):
         for name in self.image_names:
@@ -65,7 +66,7 @@ class BaseStation():
         dst_im.paste( rot, (0, 0), rot)
         dst_im.save("test.png")
         arr = numpy.array(self.apply_circular_mask(dst_im))
-        return gtk.gdk.pixbuf_new_from_array(arr, gtk.gdk.COLORSPACE_RGB, 8)
+        return Gtk.gdk.pixbuf_new_from_array(arr, Gtk.gdk.COLORSPACE_RGB, 8)
 
 
     def apply_circular_mask(self,image):
@@ -91,7 +92,7 @@ class BaseStation():
         dst_im = dst_im.crop(new_size)
         arr = numpy.array(self.apply_circular_mask(dst_im))
         #print dir(self.compass)
-        return gtk.gdk.pixbuf_new_from_array(arr, gtk.gdk.COLORSPACE_RGB, 8)
+        return Gtk.gdk.pixbuf_new_from_array(arr, Gtk.gdk.COLORSPACE_RGB, 8)
 
     def log_text(self,string):
         self.logbuffer.insert(self.logbuffer.get_end_iter(),string)

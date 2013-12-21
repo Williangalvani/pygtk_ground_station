@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fca5c363-5ee5-4885-8877-a55325dacef5" name="Default" comment="added required libs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapviewer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.png" afterPath="$PROJECT_DIR$/test.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/cache/0/0-0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/cache/11/0-0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/cache/11/747-1187.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/compass.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Will.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/cache/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/imageCache.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/mymapviewer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.glade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/test.glade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/teste2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tileLoader.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/tileLoader.py" />
+      <change type="MOVED" beforePath="C:\Users\Will\PycharmProjects\ground station\battery.png" afterPath="$PROJECT_DIR$/resources/battery.png" />
+      <change type="MOVED" beforePath="C:\Users\Will\PycharmProjects\ground station\compass.png" afterPath="$PROJECT_DIR$/mapwidget/compass.png" />
+      <change type="MOVED" beforePath="C:\Users\Will\PycharmProjects\ground station\horizon.png" afterPath="$PROJECT_DIR$/resources/horizon.png" />
+      <change type="MOVED" beforePath="C:\Users\Will\PycharmProjects\ground station\horizon2.png" afterPath="$PROJECT_DIR$/resources/horizon2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ground station.iml" afterPath="$PROJECT_DIR$/.idea/ground station.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sub.glade" afterPath="$PROJECT_DIR$/sub.glade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ground station.iws" />
@@ -30,39 +48,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="mymapviewer.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mapwidget/mymapviewer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="55" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0" vertical-offset="1281" max-vertical-offset="2052">
+            <state line="81" column="30" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.60942763" vertical-offset="981" max-vertical-offset="1955">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapviewer.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mapviewer.py">
+      <file leaf-file-name="teste2.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mapwidget/teste2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="9" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.4864865" vertical-offset="1332" max-vertical-offset="5454">
+            <state line="42" column="61" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1088">
               <folding>
-                <element signature="e#667#677#0" expanded="true" />
+                <element signature="e#208#237#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="osmgpsmap.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/osmgpsmap.py">
+      <file leaf-file-name="mapviewer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mapviewer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="394" column="8" selection-start="13078" selection-end="13078" vertical-scroll-proportion="0.0" vertical-offset="7033" max-vertical-offset="9918">
+            <state line="152" column="107" selection-start="5118" selection-end="5210" vertical-scroll-proportion="0.0" vertical-offset="2604" max-vertical-offset="5083">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README">
+      <file leaf-file-name="imageCache.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mapwidget/imageCache.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="198">
+            <state line="37" column="30" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="799">
+              <folding>
+                <element signature="e#20#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urllib.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/urllib.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="243" column="0" selection-start="8750" selection-end="8750" vertical-scroll-proportion="0.0" vertical-offset="3752" max-vertical-offset="27438">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.glade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.glade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="12" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
@@ -87,16 +125,25 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/osmgpsmap.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/mapviewer.py" />
+        <option value="$PROJECT_DIR$/test.glade" />
+        <option value="$PROJECT_DIR$/mymapviewer.py" />
+        <option value="$PROJECT_DIR$/imageCache.py" />
+        <option value="$PROJECT_DIR$/tileLoader.py" />
+        <option value="$PROJECT_DIR$/mapwidget/tileLoader.py" />
+        <option value="$PROJECT_DIR$/mapwidget/teste2.py" />
+        <option value="$PROJECT_DIR$/mapwidget/imageCache.py" />
+        <option value="$PROJECT_DIR$/mapwidget/mymapviewer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -124,6 +171,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -131,6 +179,14 @@
               <option name="myItemId" value="ground station" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.5 (C:/Python27/python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -138,22 +194,90 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pygtk_ground_station" />
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapwidget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapwidget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cache" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ground station" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapwidget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cache" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="11" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gmapcatcher" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -162,11 +286,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Will\PycharmProjects\ground station\mapwidget" />
       <recent name="C:\Users\Will\PycharmProjects\ground station\libs" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Will\PycharmProjects\ground station\resources" />
+      <recent name="C:\Users\Will\PycharmProjects\ground station\mapwidget" />
+      <recent name="C:\Users\Will\PycharmProjects\ground station\mapwidget\cache" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.mymapviewer (1)">
+    <configuration default="false" name="imageCache" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -178,25 +308,79 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ground station" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Will\PycharmProjects\ground station\mapwidget\imageCache.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="mapviewer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="imageCache (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapwidget" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ground station" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapviewer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapwidget/imageCache.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tileLoader" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapwidget" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ground station" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapwidget/tileLoader.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mymapviewer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapwidget" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ground station" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapwidget/mymapviewer.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="teste2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapwidget" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ground station" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapwidget/teste2.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -323,14 +507,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.mapviewer" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.imageCache" />
+      <item index="1" class="java.lang.String" itemvalue="Python.imageCache (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.tileLoader" />
+      <item index="3" class="java.lang.String" itemvalue="Python.mymapviewer (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.teste2" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.mapviewer" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.mymapviewer (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.teste2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.tileLoader" />
+        <item index="3" class="java.lang.String" itemvalue="Python.imageCache (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.imageCache" />
       </list>
     </recent_temporary>
   </component>
@@ -366,23 +556,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.184375" sideWeight="0.62863296" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18177083" sideWeight="0.67099565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37136707" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18290043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -405,108 +595,111 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="198">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="36" selection-start="3329" selection-end="3329" vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="1853">
+        <state line="35" column="32" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/mapwidget/cache/0/0-0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tileLoader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
+        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/test.glade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="36" selection-start="3329" selection-end="3329" vertical-scroll-proportion="0.0" vertical-offset="712" max-vertical-offset="1853">
+        <state line="18" column="12" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/mapwidget/cache/11/0-0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/cache/11/747-1187.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/cairo/_cairo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
+        <state line="599" column="8" selection-start="15017" selection-end="15017" vertical-scroll-proportion="0.33333334" vertical-offset="9940" max-vertical-offset="15436">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/mapwidget/compass.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/a.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/tileLoader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="47" selection-start="2968" selection-end="2968" vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="1666">
-          <folding />
+        <state line="26" column="26" selection-start="645" selection-end="645" vertical-scroll-proportion="0.60631" vertical-offset="0" max-vertical-offset="729">
+          <folding>
+            <element signature="e#21#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/mapwidget/test.glade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="38" selection-start="2205" selection-end="2209" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/gobject/_gobject.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="4" selection-start="2578" selection-end="2578" vertical-scroll-proportion="-1.909434" vertical-offset="3082" max-vertical-offset="13500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/gi/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.33207548" vertical-offset="292" max-vertical-offset="1602" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="55" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="2052">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/osmgpsmap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="394" column="8" selection-start="13078" selection-end="13078" vertical-scroll-proportion="0.0" vertical-offset="7033" max-vertical-offset="9918">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="729">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mapviewer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="9" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.4864865" vertical-offset="1332" max-vertical-offset="5454">
+        <state line="152" column="107" selection-start="5118" selection-end="5210" vertical-scroll-proportion="0.0" vertical-offset="2604" max-vertical-offset="5083">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/urllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="243" column="0" selection-start="8750" selection-end="8750" vertical-scroll-proportion="0.0" vertical-offset="3752" max-vertical-offset="27438">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/imageCache.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="30" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="799">
           <folding>
-            <element signature="e#667#677#0" expanded="true" />
+            <element signature="e#20#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/teste2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="61" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1088">
+          <folding>
+            <element signature="e#208#237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/mymapviewer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="30" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.60942763" vertical-offset="981" max-vertical-offset="1955">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -287,7 +287,11 @@ Estimated Autonomy:
                                     <property name="can_focus">False</property>
                                     <property name="left_padding">12</property>
                                     <child>
-                                      <placeholder/>
+                                      <object class="GtkImage" id="mapimage">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="stock">gtk-missing-image</property>
+                                      </object>
                                     </child>
                                   </object>
                                 </child>
