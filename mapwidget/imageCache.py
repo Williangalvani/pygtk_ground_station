@@ -3,6 +3,8 @@ import urllib
 from os.path import abspath, dirname, join
 import os
 from PIL import Image
+import traceback
+import time
 
 WHERE_AM_I = abspath(dirname(__file__))
 
@@ -30,13 +32,32 @@ class ImageLoader(object):
         except:
             imageurl = self.address.format(lat, long, level)
             print "loading image from " , imageurl
-            urllib.urlretrieve(imageurl, "temp.png")
-            img = Image.open("temp.png")
-            new = Image.new('RGB', (256,256))
-            new.paste(img,(0,0))
-            new.save(filename)
-        #img = open(filename)
-        #return img
+            tempfilename = filename.replace(".png","temp.png")
+
+            tempfile = open(tempfilename,'wb')
+            length = urllib.urlretrieve(imageurl, tempfilename)[1].getheader("content-length")
+
+
+            try:
+                img = Image.open(tempfilename)
+                new = Image.new('RGB', (256,256))
+                new.paste(img,(0,0))
+                newfile = open(filename,'wb')
+                new.save(newfile,"PNG")
+
+                newfile.flush()
+                os.fsync(newfile)
+                newfile.close()
+
+                tempfile.flush()
+                os.fsync(tempfile)
+                tempfile.close()
+                #os.remove(tempfilename)
+
+            except Exception, e:
+                print "erro no Cache de disco!!", e, filename
+                #print traceback.format_exc()
+        #print filename
         return filename
 
 #ImageLoader().getImage(0,0,0)

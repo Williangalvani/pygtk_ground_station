@@ -7,6 +7,7 @@ WHERE_AM_I = abspath(dirname(__file__))
 from tileLoader import TileLoader
 from gi.repository import Gdk
 from math import ceil
+from gi.repository import GLib
 
 class MyApp(object):
     """Double buffer in PyGObject with cairo"""
@@ -16,11 +17,12 @@ class MyApp(object):
         self.builder = Gtk.Builder()
         self.glade_file = join(WHERE_AM_I, 'test.glade')
         self.builder.add_from_file(self.glade_file)
-        self.tileLoader = TileLoader()
+
 
         # Get objects
         go = self.builder.get_object
         self.window = go('window')
+        self.tileLoader = TileLoader(self.window)
         self.double_buffer = None
         self.lat = -48.519688
         self.long = -27.606899
@@ -48,10 +50,18 @@ class MyApp(object):
                             | Gdk.EventMask.POINTER_MOTION_MASK
                             | Gdk.EventMask.SCROLL_MASK
                             | Gdk.EventMask.POINTER_MOTION_HINT_MASK)
-        print dir(self.window)
+        #print dir(self.window)
         self.window.resize(256,256)
         # Everything is ready
         self.window.show()
+        self.updateloop()
+
+
+
+    def updateloop(self):
+        print "update"
+        self.window.queue_draw()
+        GLib.timeout_add_seconds(1, self.updateloop)
 
     def on_scroll(self,widget,event):
         #print dir(Gdk)
@@ -70,7 +80,7 @@ class MyApp(object):
 
     def on_click(self,widget,event):
         self.button = event.button
-        #print event.button
+        print event.button
 
     def on_release(self,widget,event):
         self.button = 0

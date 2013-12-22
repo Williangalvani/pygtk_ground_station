@@ -3,12 +3,38 @@ __author__ = 'Will'
 from math import sin, cos, log , pi
 from imageCache import ImageLoader
 import cairo
+import threading
+from collections import deque
+import time
+import traceback
+
+class FuncThread(threading.Thread):
+    def __init__(self, target, *args):
+        self._target = target
+        self._args = args
+
+        threading.Thread.__init__(self)
+
+    def run(self):
+        self._target(*self._args)
 
 
 class TileLoader():
-    def __init__(self):
+    def __init__(self,window):
         self.loader = ImageLoader()
         self.cache = {}
+        self.window = window
+        self.cache["loading"] = cairo.ImageSurface.create_from_png("loading.png")
+        self.pendingTiles = deque()
+        self.loadingTiles = set()
+        self.threads = []
+        self.listlock = threading.Lock()
+        self.uilock = threading.Lock()
+        for i in range(10):
+            t = FuncThread(self.loading_thread,self.pendingTiles,self.cache,self.listlock,i)
+            self.threads.append(t)
+            t.start()
+
     def coord_to_gmap_tile(self,lat, lon, zoom):
 
         sin_phi = sin(lat * pi / 180)
@@ -60,13 +86,35 @@ class TileLoader():
         name = str((int(x),int(y)))
         #print name
         if self.cache.has_key(name):
-            return self.cache[name]
+                return self.cache[name]
         else:
-            tile = self.loadImage(x,y,z)
-            img = cairo.ImageSurface.create_from_png(tile)
-            self.cache[name] = img
-        #print name
+            if (x,y,z) not in self.pendingTiles and (x,y,z) not in self.loadingTiles:
+                self.pendingTiles.append((x,y,z))
+            return self.cache["loading"]
         return img
+
+
+    def loading_thread(self,pending,cache,lock,id):
+        id = id
+        while(1):
+            lock.acquire()
+            if len(pending)>0:
+                x,y,z = pending.popleft()
+                self.loadingTiles.add((x,y,z))
+                lock.release()
+                name = str((int(x),int(y)))
+                try:
+                    tile = self.loadImage(x,y,z)
+                    img = cairo.ImageSurface.create_from_png(tile)
+                    cache[name] = img
+                    self.loadingTiles.remove((x,y,z))
+                except Exception, e:
+                    print "erro! " ,e,  name
+
+            else:
+                lock.release()
+            time.sleep(0.1)
+
 
 
     def loadArea(self,x0,y0,z0,tiles_x,tiles_y):
