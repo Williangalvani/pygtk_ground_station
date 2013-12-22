@@ -34,8 +34,13 @@ class ImageLoader(object):
             print "loading image from " , imageurl
             tempfilename = filename.replace(".png","temp.png")
 
+
             tempfile = open(tempfilename,'wb')
-            length = urllib.urlretrieve(imageurl, tempfilename)[1].getheader("content-length")
+            tempfile.write(urllib.urlopen(imageurl).read())
+            tempfile.close()
+            #open(tempfilename,'r')
+            #length = urllib.urlretrieve(imageurl, tempfilename)[1].getheader("content-length")
+            #tempfile = open(tempfilename,'r')
 
 
             try:
@@ -45,18 +50,18 @@ class ImageLoader(object):
                 newfile = open(filename,'wb')
                 new.save(newfile,"PNG")
 
-                newfile.flush()
-                os.fsync(newfile)
                 newfile.close()
 
-                tempfile.flush()
-                os.fsync(tempfile)
                 tempfile.close()
-                #os.remove(tempfilename)
+                del tempfile,img
+                try:
+                    os.remove(tempfilename)
+                except:
+                    pass
 
             except Exception, e:
                 print "erro no Cache de disco!!", e, filename
-                #print traceback.format_exc()
+                print traceback.format_exc()
         #print filename
         return filename
 

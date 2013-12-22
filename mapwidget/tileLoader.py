@@ -110,6 +110,7 @@ class TileLoader():
                     self.loadingTiles.remove((x,y,z))
                 except Exception, e:
                     print "erro! " ,e,  name
+                    print traceback.format_exc()
 
             else:
                 lock.release()

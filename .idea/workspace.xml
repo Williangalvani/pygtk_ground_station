@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fca5c363-5ee5-4885-8877-a55325dacef5" name="Default" comment="it works!">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mapwidget/cache/loading.png" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/mapwidget/cache/11/747-1187.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Will\PycharmProjects\ground station\mapwidget\cache\0\0-0.png" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Will\PycharmProjects\ground station\mapwidget\cache\11\0-0.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapwidget/a.png" afterPath="$PROJECT_DIR$/mapwidget/a.png" />
+      <change type="DELETED" beforePath="C:\Users\Will\PycharmProjects\ground station\mapwidget\cache\__init__.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapwidget/imageCache.py" afterPath="$PROJECT_DIR$/mapwidget/imageCache.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapwidget/mymapviewer.py" afterPath="$PROJECT_DIR$/mapwidget/mymapviewer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapwidget/tileLoader.py" afterPath="$PROJECT_DIR$/mapwidget/tileLoader.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,7 +34,7 @@
       <file leaf-file-name="mymapviewer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mapwidget/mymapviewer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="30" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="3145">
+            <state line="63" column="34" selection-start="2127" selection-end="2127" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="3315">
               <folding />
             </state>
           </provider>
@@ -44,7 +43,7 @@
       <file leaf-file-name="tileLoader.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mapwidget/tileLoader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="31" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="268" max-vertical-offset="1632">
+            <state line="112" column="47" selection-start="3365" selection-end="3365" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2465">
               <folding>
                 <element signature="e#21#56#0" expanded="true" />
               </folding>
@@ -52,44 +51,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="mapviewer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mapviewer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="4" selection-start="1014" selection-end="1028" vertical-scroll-proportion="-7.980392" vertical-offset="103" max-vertical-offset="5083">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Image.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/PIL/Image.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1979" column="0" selection-start="62776" selection-end="62776" vertical-scroll-proportion="0.0" vertical-offset="33430" max-vertical-offset="36210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test.glade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mapwidget/test.glade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="44" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="408">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_cairo.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/cairo/_cairo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="392" column="8" selection-start="9043" selection-end="9043" vertical-scroll-proportion="0.0" vertical-offset="6422" max-vertical-offset="15436">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="24" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mask.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mask.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teste2.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mapwidget/teste2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="61" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1088">
+            <state line="10" column="44" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
@@ -98,10 +81,19 @@
       <file leaf-file-name="imageCache.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mapwidget/imageCache.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="0.2517194" vertical-offset="55" max-vertical-offset="782">
+            <state line="65" column="23" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.7441472" vertical-offset="660" max-vertical-offset="1258">
               <folding>
                 <element signature="e#20#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageFile.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/PIL/ImageFile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="200" column="0" selection-start="5919" selection-end="5919" vertical-scroll-proportion="0.0" vertical-offset="3221" max-vertical-offset="9061">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +108,7 @@
       <file leaf-file-name="urllib.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://C:/Python27/Lib/urllib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="243" column="0" selection-start="8750" selection-end="8750" vertical-scroll-proportion="0.0" vertical-offset="4131" max-vertical-offset="27574">
+            <state line="93" column="0" selection-start="3308" selection-end="3308" vertical-scroll-proportion="0.0" vertical-offset="1208" max-vertical-offset="27438">
               <folding />
             </state>
           </provider>
@@ -152,8 +144,8 @@
         <option value="$PROJECT_DIR$/REQUIREMENTS.txt" />
         <option value="$PROJECT_DIR$/png.py" />
         <option value="$PROJECT_DIR$/mapwidget/mymapviewer.py" />
-        <option value="$PROJECT_DIR$/mapwidget/imageCache.py" />
         <option value="$PROJECT_DIR$/mapwidget/tileLoader.py" />
+        <option value="$PROJECT_DIR$/mapwidget/imageCache.py" />
       </list>
     </option>
   </component>
@@ -268,9 +260,9 @@
       <recent name="C:\Users\Will\PycharmProjects\ground station\libs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Will\PycharmProjects\ground station\mapwidget" />
       <recent name="C:\Users\Will\PycharmProjects\ground station\mapwidget\cache" />
       <recent name="C:\Users\Will\PycharmProjects\ground station\resources" />
-      <recent name="C:\Users\Will\PycharmProjects\ground station\mapwidget" />
     </key>
   </component>
   <component name="RunManager" selected="Python.mymapviewer (1)">
@@ -534,28 +526,40 @@
       <created>1387663518817</created>
       <updated>1387663518817</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="it works!">
+      <created>1387722381280</created>
+      <updated>1387722381280</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed PIL fixing of the downloaded image">
+      <created>1387723314499</created>
+      <updated>1387723314499</updated>
+    </task>
+    <task id="LOCAL-00005" summary="implement thread support">
+      <created>1387735296327</created>
+      <updated>1387735296327</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18177083" sideWeight="0.8149351" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18177083" sideWeight="0.6753247" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18506494" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32467532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -570,7 +574,10 @@
     </option>
     <MESSAGE value="added required libs" />
     <MESSAGE value="fuck you" />
-    <option name="LAST_COMMIT_MESSAGE" value="fuck you" />
+    <MESSAGE value="it works!" />
+    <MESSAGE value="fixed PIL fixing of the downloaded image" />
+    <MESSAGE value="implement thread support" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement thread support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -578,27 +585,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mapwidget/imageCache.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="30" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="833">
-          <folding>
-            <element signature="e#20#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/urllib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="0" selection-start="8750" selection-end="8750" vertical-scroll-proportion="0.0" vertical-offset="4131" max-vertical-offset="27574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mapwidget/compass.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mapwidget/a.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -609,35 +595,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="24" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/cairo/_cairo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="392" column="8" selection-start="9043" selection-end="9043" vertical-scroll-proportion="0.0" vertical-offset="6422" max-vertical-offset="15436">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.glade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="12" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mapwidget/test.glade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="44" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mapviewer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="107" selection-start="5118" selection-end="5210" vertical-scroll-proportion="-0.09353507" vertical-offset="2584" max-vertical-offset="5083" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mapwidget/teste2.py">
@@ -647,37 +607,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/urllib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="0" selection-start="8750" selection-end="8750" vertical-scroll-proportion="0.0" vertical-offset="3752" max-vertical-offset="27438">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="24" selection-start="75" selection-end="75" vertical-scroll-proportion="0.11691885" vertical-offset="0" max-vertical-offset="727">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/cairo/_cairo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="392" column="8" selection-start="9043" selection-end="9043" vertical-scroll-proportion="0.33287483" vertical-offset="6422" max-vertical-offset="15436">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapwidget/test.glade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="44" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/urllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="0" selection-start="3308" selection-end="3308" vertical-scroll-proportion="0.0" vertical-offset="1208" max-vertical-offset="27438">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3977" column="0" selection-start="136724" selection-end="136724" vertical-scroll-proportion="0.19614148" vertical-offset="67487" max-vertical-offset="86683">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapviewer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="4" selection-start="1014" selection-end="1028" vertical-scroll-proportion="-7.980392" vertical-offset="103" max-vertical-offset="5083">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mapwidget/mymapviewer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="3145">
+        <state line="63" column="34" selection-start="2127" selection-end="2127" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3315">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mapwidget/tileLoader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="268" max-vertical-offset="1632">
+        <state line="112" column="47" selection-start="3365" selection-end="3365" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2465">
           <folding>
             <element signature="e#21#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/PIL/ImageFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="0" selection-start="5919" selection-end="5919" vertical-scroll-proportion="0.0" vertical-offset="3221" max-vertical-offset="9061">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1979" column="0" selection-start="62776" selection-end="62776" vertical-scroll-proportion="0.0" vertical-offset="33430" max-vertical-offset="36210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mapwidget/imageCache.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="0.2517194" vertical-offset="55" max-vertical-offset="782">
+        <state line="65" column="23" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.7441472" vertical-offset="660" max-vertical-offset="1258">
           <folding>
             <element signature="e#20#33#0" expanded="true" />
           </folding>
