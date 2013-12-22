@@ -30,10 +30,14 @@ class TileLoader():
         self.threads = []
         self.listlock = threading.Lock()
         self.uilock = threading.Lock()
+        self.run = True
         for i in range(10):
             t = FuncThread(self.loading_thread,self.pendingTiles,self.cache,self.listlock,i)
             self.threads.append(t)
             t.start()
+
+    def stop_threads(self):
+        self.run = False
 
     def coord_to_gmap_tile(self,lat, lon, zoom):
         sin_phi = sin(lat * pi / 180)
@@ -43,17 +47,11 @@ class TileLoader():
         tile_y = (2 ** zoom) * ((1 - norm_y) / 2)
         return tile_x, tile_y
 
-    def pix_to_coord(self,x, y0,y, zoom):
+    def dpix_to_dcoord(self,x, y0,y, zoom):
         sin_phi =  cos(y0 * pi / 180)
         long = 180.0/(2**zoom)*x / 128
         lat = - 180.0/(2**zoom)*y / 128 * sin_phi
         return long,lat
-
-    def loadImage(self,x,y,z):
-        x = int(x)
-        y = int(y)
-        z = int(z)
-        return self.loader.getImage(x,y,z)
 
     def gmap_tile_xy(self,tile_x, tile_y):
         return (tile_x - int(tile_x)) * 256,\
@@ -64,15 +62,18 @@ class TileLoader():
         return (tile_x - int(tile_x)) * 256,\
                (tile_y - int(tile_y)) * 256
 
-    def loadImageSurface(self,x,y,z):
-        name = str(self.coord_to_gmap_tile(x,y,z))
-        if self.cache.has_key(name):
-            return self.cache[name]
-        else:
-            tile = self.loadImage(x,y,z)
-            img = cairo.ImageSurface.create_from_png(tile)
-            self.cache[name] = img
-        return img
+
+
+    # def loadImageSurface(self,x,y,z):
+    #     name = str(self.coord_to_gmap_tile(x,y,z))
+    #     if self.cache.has_key(name):
+    #         return self.cache[name]
+    #     else:
+    #         tile = self.loader.getImage(int(x),int(y),int(z))
+    #         img = cairo.ImageSurface.create_from_png(tile)
+    #         self.cache[name] = img
+    #     return img
+
 
     def loadImageSurfaceFromTile(self,x,y,z):
         name = str((int(x),int(y)))
@@ -87,8 +88,7 @@ class TileLoader():
 
 
     def loading_thread(self,pending,cache,lock,id):
-        id = id
-        while(1):
+        while(self.run):
             lock.acquire()
             if len(pending)>0:
                 x,y,z = pending.popleft()
@@ -96,28 +96,27 @@ class TileLoader():
                 lock.release()
                 name = str((int(x),int(y)))
                 try:
-                    tile = self.loadImage(x,y,z)
+                    tile = self.loader.get_image(x,y,z)
                     img = cairo.ImageSurface.create_from_png(tile)
                     cache[name] = img
                     self.loadingTiles.remove((x,y,z))
                 except Exception, e:
-                    print "erro! " ,e,  name
-                    print traceback.format_exc()
-
+                    print "error loading tile {0} at thread {1}! ".format( name,id)
+                    #print traceback.format_exc()
             else:
                 lock.release()
-            time.sleep(0.1)
+            time.sleep(0.01)
 
 
 
-    def loadArea(self,x0,y0,z0,tiles_x,tiles_y):
-        x0,y0 = self.coord_to_gmap_tile(x0,y0,z0)
+    def load_area(self, x0, y0, z0, tiles_x, tiles_y):
+        x0, y0 = self.coord_to_gmap_tile(x0, y0, z0)
         tiles_array = []
         x_span = (tiles_x/2)+1
         y_span = (tiles_y/2)+1
-        for y in range(-y_span,y_span+1):
+        for y in range(-y_span, y_span+1):
             y_list = []
-            for x in range(-x_span,x_span+1):
-                y_list.append(self.loadImageSurfaceFromTile(x0+x,y0+y,z0))
+            for x in range(-x_span, x_span+1):
+                y_list.append(self.loadImageSurfaceFromTile(x0+x, y0+y, z0))
             tiles_array.append(y_list)
         return tiles_array

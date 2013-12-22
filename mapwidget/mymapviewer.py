@@ -8,6 +8,7 @@ from tileLoader import TileLoader
 from gi.repository import Gdk
 from math import ceil
 from gi.repository import GLib
+from datetime import datetime
 
 class MyApp(object):
     """Double buffer in PyGObject with cairo"""
@@ -17,21 +18,22 @@ class MyApp(object):
         self.builder = Gtk.Builder()
         self.glade_file = join(WHERE_AM_I, 'test.glade')
         self.builder.add_from_file(self.glade_file)
+        self.last_scroll = datetime.now()
 
 
         # Get objects
         go = self.builder.get_object
         self.window = go('window')
-        self.tileLoader = TileLoader(self.window)
+        self.tile_loader = TileLoader(self.window)
         self.double_buffer = None
         self.lat = -48.519688
         self.long = -27.606899
         self.zoom = 11
         self.button = 0
         self.x,self.y = 0,0
-        self.pointerX = 0
-        self.pointerY = 0
-        self.heigth = 0
+        self.pointer_x = 0
+        self.pointer_y = 0
+        self.height = 0
         self.width = 0
         self.dx = 0
         self.dy = 0
@@ -53,69 +55,66 @@ class MyApp(object):
         self.window.resize(256,256)
         # Everything is ready
         self.window.show()
-        self.updateloop()
+        self.update_loop()
 
-
-
-    def updateloop(self):
+    def update_loop(self):
         self.window.queue_draw()
-        GLib.timeout_add_seconds(1, self.updateloop)
+        GLib.timeout_add_seconds(1, self.update_loop)
+
+    def zoom_in(self):
+        self.zoom+=1
+        if self.zoom>20:
+            self.zoom = 20
+
+    def zoom_out(self):
+        self.zoom-=1
+        if self.zoom < 1:
+            self.zoom = 1
 
     def on_scroll(self,widget,event):
-        #print dir(Gdk)
-        #print event.get_scroll_direction()
-        #if event.get_scroll_direction() == Gdk.KEY_ScrollUp:
-        if event.get_scroll_direction()[1] == 0: # UP
-            self.zoom+=1
-            if self.zoom>20:
-                self.zoom = 20
-
-        else:
-            self.zoom-=1
-            if self.zoom < 1:
-                self.zoom = 1
-        self.window.queue_draw()
+        if (datetime.now() - self.last_scroll).microseconds > 100000:
+            if event.get_scroll_direction()[1] == 0: # UP
+                self.zoom_in()
+            else:
+                self.zoom_out()
+            self.window.queue_draw()
+            self.last_scroll = datetime.now()
 
     def on_click(self,widget,event):
         self.button = event.button
-        print event.button
 
     def on_release(self,widget,event):
         self.button = 0
 
     def on_move(self,widget,event):
         x, y = event.x, event.y
-        dx = x-self.pointerX
-        dy = y - self.pointerY
-        self.pointerX, self.pointerY = x, y
+        dx = x-self.pointer_x
+        dy = y - self.pointer_y
+        self.pointer_x, self.pointer_y = x, y
         if self.button == 1:
-            #self.dx+=dx
-            dlat,dlong = self.tileLoader.pix_to_coord(dx,self.long,dy,self.zoom)
+            dlat, dlong = self.tile_loader.dpix_to_dcoord(dx, self.long, dy, self.zoom)
             self.lat -= dlat
-            self.long-= dlong
+            self.long -= dlong
             self.window.queue_draw()
-        #print x,y
+
 
     def draw_tiles(self):
         """Draw something into the buffer"""
         db = self.double_buffer
         if db is not None:
-            # Create cairo context with double buffer as is DESTINATION
             span_x = self.width
-            span_y = self.heigth
+            span_y = self.height
             tiles_x = int(ceil(span_x/256.0))
             tiles_y = int(ceil(span_y/256.0))
 
             cc = cairo.Context(db)
-            #print tiles_x,tiles_y
-            tiles = self.tileLoader.loadArea(self.long,self.lat,self.zoom,tiles_x,tiles_y)
+            tiles = self.tile_loader.load_area(self.long,self.lat,self.zoom,tiles_x,tiles_y)
             tile_number=0
             line_number=0
 
-            xcenter = self.width/2 - 128
-            ycenter = self.heigth/2 - 128
-            offsetx,offsety = self.tileLoader.gmap_tile_xy_from_coord(self.long,self.lat,self.zoom)
-            #print offsetx,offsety
+            x_center = self.width/2# - 128
+            y_center = self.height/2# - 128
+            offset_x,offset_y = self.tile_loader.gmap_tile_xy_from_coord(self.long,self.lat,self.zoom)
 
 
             xtiles = len(tiles[0])
@@ -123,10 +122,10 @@ class MyApp(object):
             #print len(tiles),len(tiles[0])
             for line in tiles:
                 for tile in line:
-                    x = (tile_number - int(xtiles/2)) * 256 + xcenter
-                    y = (line_number - int(ytiles/2)) * 256 + ycenter
-                    finalx = x + 128 - offsetx
-                    finaly = y + 128 - offsety
+                    x = (tile_number - int(xtiles/2)) * 256 + x_center
+                    y = (line_number - int(ytiles/2)) * 256 + y_center
+                    finalx = x - offset_x  #+128
+                    finaly = y - offset_y  #+128
                     cc.set_source_surface(tile, finalx+self.dx, finaly+self.dy)
                     cc.paint()
                     tile_number += 1
@@ -139,21 +138,17 @@ class MyApp(object):
             print('Invalid double buffer')
 
     def main_quit(self, widget):
-        """Quit Gtk"""
+        self.tile_loader.stop_threads()
         Gtk.main_quit()
 
     def on_draw(self, widget, cr):
-
         """Throw double buffer into widget drawable"""
-
         if self.double_buffer is not None:
             self.draw_tiles()
             cr.set_source_surface(self.double_buffer, 0.0, 0.0)
-            #print dir(cr)
             cr.paint()
         else:
             print('Invalid double buffer')
-
         return False
 
 
@@ -166,12 +161,10 @@ class MyApp(object):
             self.double_buffer = None
 
         # Create a new buffer
-        self.double_buffer = cairo.ImageSurface(\
-                cairo.FORMAT_ARGB32,
-                widget.get_allocated_width(),
-                widget.get_allocated_height()
-            )
-        self.heigth = widget.get_allocated_height()
+        self.double_buffer = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                                widget.get_allocated_width(),
+                                                widget.get_allocated_height())
+        self.height = widget.get_allocated_height()
         self.width = widget.get_allocated_width()
 
         # Initialize the buffer
