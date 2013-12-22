@@ -23,7 +23,7 @@ class MyApp(object):
 
         # Get objects
         go = self.builder.get_object
-        self.window = go('window')
+        self.window = go('frame1')
         self.tile_loader = TileLoader(self.window)
         self.double_buffer = None
         self.lat = -48.519688
