@@ -50,7 +50,6 @@ class MyApp(object):
                             | Gdk.EventMask.POINTER_MOTION_MASK
                             | Gdk.EventMask.SCROLL_MASK
                             | Gdk.EventMask.POINTER_MOTION_HINT_MASK)
-        #print dir(self.window)
         self.window.resize(256,256)
         # Everything is ready
         self.window.show()
@@ -59,7 +58,6 @@ class MyApp(object):
 
 
     def updateloop(self):
-        print "update"
         self.window.queue_draw()
         GLib.timeout_add_seconds(1, self.updateloop)
 
@@ -134,12 +132,6 @@ class MyApp(object):
                     tile_number += 1
                 tile_number = 0
                 line_number += 1
-
-
-
-            #print tiles_x,tiles_y
-
-
 
             db.flush()
 
