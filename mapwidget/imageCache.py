@@ -30,9 +30,11 @@ class ImageLoader(object):
         except:
             imageurl = self.address.format(lat, long, level)
             print "loading image from " , imageurl
-            urllib.urlretrieve(imageurl, filename)
-            img = Image.open(filename)
-            img.save(filename)
+            urllib.urlretrieve(imageurl, "temp.png")
+            img = Image.open("temp.png")
+            new = Image.new('RGB', (256,256))
+            new.paste(img,(0,0))
+            new.save(filename)
         #img = open(filename)
         #return img
         return filename
