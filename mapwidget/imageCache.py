@@ -2,6 +2,7 @@ __author__ = 'Will'
 import urllib
 from os.path import abspath, dirname, join
 import os
+from PIL import Image
 
 WHERE_AM_I = abspath(dirname(__file__))
 
@@ -30,12 +31,10 @@ class ImageLoader(object):
             imageurl = self.address.format(lat, long, level)
             print "loading image from " , imageurl
             urllib.urlretrieve(imageurl, filename)
-
-            #output = open(join(leveldir,"{0}-{1}.png".format(lat,long)),'wb')
-            #output.write(image.read())
-            #output.close()
-            #print image
-        image = open(filename)
-        return image
+            img = Image.open(filename)
+            img.save(filename)
+        #img = open(filename)
+        #return img
+        return filename
 
 #ImageLoader().getImage(0,0,0)
