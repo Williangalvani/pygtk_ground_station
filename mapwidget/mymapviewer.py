@@ -29,9 +29,9 @@ class MyApp(object):
 
         self.double_buffer = None
         self.longitude = -48.519688
-        self.latitude = -27.606899
-        self.points = [(self.longitude,self.latitude)]
-        self.zoom = 11
+        self.latitude =  -27.606899
+        self.points = [(self.longitude,self.latitude),(0.0,0.0),(180,36.8),(-47.886829,-15.793751)]
+        self.zoom = 2
         self.button = 0
         self.x,self.y = 0,0
         self.pointer_x = 0
@@ -68,7 +68,7 @@ class MyApp(object):
     def update_loop(self):
         #print "update"
         self.window.queue_draw()
-        self.coordlabel.set_text("Long: {0} \n Lat: {1}\nPending tiles: {2}".format(self.latitude,self.longitude,len(self.tile_loader.pending_tiles)+len(self.tile_loader.loading_tiles)))
+        self.coordlabel.set_text("Long: {0} \n Lat: {1}\nPending tiles: {2}".format(self.longitude,self.latitude,len(self.tile_loader.pending_tiles)+len(self.tile_loader.loading_tiles)))
         GLib.timeout_add_seconds(1, self.update_loop)
 
     def zoom_in(self,widget = None,event = None):
@@ -78,8 +78,9 @@ class MyApp(object):
 
     def zoom_out(self,widget = None,event = None):
         self.zoom-=1
-        if self.zoom < 1:
-            self.zoom = 1
+        if self.zoom < 2:
+            self.zoom = 2
+        print self.zoom
 
     def on_scroll(self,widget,event):
         if (datetime.now() - self.last_scroll).microseconds > 100000:
@@ -96,6 +97,14 @@ class MyApp(object):
     def on_release(self,widget,event):
         self.button = 0
 
+
+    def set_zoom(self,zoom):
+        self.zoom = zoom
+
+    def set_focus(self,long,lat):
+        self.longitude = long
+        self.latitude = lat
+
     def on_move(self,widget,event):
         x, y = event.x, event.y
         dx = x-self.pointer_x
@@ -105,6 +114,17 @@ class MyApp(object):
             dlongitude, dlatitude = self.tile_loader.dpix_to_dcoord(dx, self.latitude, dy, self.zoom)
             self.longitude -= dlongitude
             self.latitude -= dlatitude
+
+            if self.longitude>180:
+                 self.longitude=180.0
+            if self.longitude<-180:
+                 self.longitude=-180.0
+            if self.latitude>85.0:
+                 self.latitude = 85.0
+            if self.latitude<-85.0:
+                 self.latitude = -85.0
+
+
             self.window.queue_draw()
 
     def draw_center_circle(self,cr,x_pos,y_pos):
@@ -117,8 +137,8 @@ class MyApp(object):
         cr.translate(size/2, size/2)
         cr.arc(x_pos-size/2, y_pos-size/2, 5, 0, 2*math.pi)
         cr.stroke_preserve()
-
-        cr.set_source_rgb(0, 0, 0)
+        cr.translate(-size/2, -size/2)
+        #cr.set_source_rgb(0, 0, 0)
         #cr.fill
 
 
@@ -146,6 +166,7 @@ class MyApp(object):
     def draw_points(self,cr):
         for point in self.points:
             x,y = self.tile_loader.dcord_to_dpix(point[0],self.longitude,point[1],self.latitude,self.zoom)
+            #print x,y
             self.draw_center_circle(cr,x+self.width/2,y+self.height/2)
 
 
@@ -159,13 +180,13 @@ class MyApp(object):
             tiles_y = int(ceil(span_y/256.0))
 
             cc = cairo.Context(db)
-            tiles = self.tile_loader.load_area(self.latitude,self.longitude,self.zoom,tiles_x,tiles_y)
+            tiles = self.tile_loader.load_area(self.longitude,self.latitude,self.zoom,tiles_x,tiles_y)
             tile_number=0
             line_number=0
 
             x_center = self.width/2# - 128
             y_center = self.height/2# - 128
-            offset_x,offset_y = self.tile_loader.gmap_tile_xy_from_coord(self.latitude,self.longitude,self.zoom)
+            offset_x,offset_y = self.tile_loader.gmap_tile_xy_from_coord(self.longitude,self.latitude,self.zoom)
 
 
             xtiles = len(tiles[0])

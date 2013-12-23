@@ -39,7 +39,7 @@ class TileLoader():
     def stop_threads(self):
         self.run = False
 
-    def coord_to_gmap_tile(self, lat, lon, zoom):
+    def coord_to_gmap_tile(self, lon,lat, zoom):
         sin_phi = sin(lat * pi / 180)
         norm_x = lon / 180
         norm_y = (0.5 * log((1 + sin_phi) / (1 - sin_phi))) / pi
@@ -54,8 +54,8 @@ class TileLoader():
         return long,lat
 
     def dcord_to_dpix(self, long, long0, lat, lat0, zoom):
-        x0, y0 = self.coord_to_gmap_tile(lat0, long0, zoom)
-        x,   y = self.coord_to_gmap_tile(lat,  long,  zoom)
+        x0, y0 = self.coord_to_gmap_tile(long0, lat0, zoom)
+        x,   y = self.coord_to_gmap_tile(long,  lat,  zoom)
         dx = (x - x0)*256
         dy = (y - y0)*256
         return dx, dy
@@ -64,15 +64,21 @@ class TileLoader():
         return (tile_x - int(tile_x)) * 256,\
                (tile_y - int(tile_y)) * 256
 
-    def gmap_tile_xy_from_coord(self,x, y,z):
-        tile_x, tile_y = self.coord_to_gmap_tile(x,y,z)
+    def gmap_tile_xy_from_coord(self, x, y, z):
+        tile_x, tile_y = self.coord_to_gmap_tile(x, y, z)
         return (tile_x - int(tile_x)) * 256,\
                (tile_y - int(tile_y)) * 256
 
     def loadImageSurfaceFromTile(self, x, y, z):
         name = str((int(x), int(y)))
         #print name
-        x, y, z = int(x), int(y) , int(z)
+        x, y, z = int(x), int(y), int(z)
+        max = 2 ** z
+        if x < 0 or y < 0 or x > (max -1) or y> (max-1):
+            #print "out of bounds", x, y
+            return self.cache["loading"]
+        #else:
+        #    print "ok", x,  y
         if self.cache.has_key(name):
                 return self.cache[name]
         else:
@@ -81,7 +87,7 @@ class TileLoader():
             return self.cache["loading"]
         return img
 
-    def loading_thread(self,pending,cache,lock,id):
+    def loading_thread(self, pending, cache, lock, id):
         while self.run:
             lock.acquire()
             if len(pending)>0:
@@ -97,9 +103,9 @@ class TileLoader():
                 except Exception, e:
                     print "error loading tile {0} at thread {1}! ".format( name,id)
                     #print traceback.format_exc()
-                self.ui_lock.acquire()
-                self.window.queue_draw()
-                self.ui_lock.release()
+                #self.ui_lock.acquire()
+                #self.window.queue_draw()
+                #self.ui_lock.release()
             else:
                 lock.release()
             time.sleep(0.01)
@@ -107,11 +113,14 @@ class TileLoader():
     def load_area(self, x0, y0, z0, tiles_x, tiles_y):
         x0, y0 = self.coord_to_gmap_tile(x0, y0, z0)
         tiles_array = []
+        x0 = int(x0)
+        y0 = int(y0)
         x_span = (tiles_x/2)+1
         y_span = (tiles_y/2)+1
         for y in range(-y_span, y_span+1):
             y_list = []
             for x in range(-x_span, x_span+1):
+                #print x,y
                 y_list.append(self.loadImageSurfaceFromTile(x0+x, y0+y, z0))
             tiles_array.append(y_list)
         return tiles_array
