@@ -32,7 +32,8 @@ class ImageLoader(object):
             image = open(filename)
             image.close()
             got_image = True
-        except:
+        except Exception , e:
+            #print e
             pass
 
         if not got_image:
@@ -50,8 +51,8 @@ class ImageLoader(object):
                 new.save(new_file,"PNG")
 
             except Exception, e:
+                print "erro no Cache de disco!!", e, filename
                 os.remove(temp_file_name)
                 os.remove(filename)
-                print "erro no Cache de disco!!", e, filename
                 print traceback.format_exc()
         return filename

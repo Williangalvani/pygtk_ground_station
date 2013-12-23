@@ -9,6 +9,7 @@ from gi.repository import Gdk
 from math import ceil
 from gi.repository import GLib
 from datetime import datetime
+#   import pdb
 
 class MyApp(object):
     """Double buffer in PyGObject with cairo"""
@@ -16,7 +17,7 @@ class MyApp(object):
     def __init__(self):
         # Build GUI
         self.builder = Gtk.Builder()
-        self.glade_file = join(WHERE_AM_I, 'test.glade')
+        self.glade_file = join(WHERE_AM_I, 'test1.glade')
         self.builder.add_from_file(self.glade_file)
         self.last_scroll = datetime.now()
 
@@ -24,7 +25,7 @@ class MyApp(object):
         # Get objects
         go = self.builder.get_object
         self.window = go('window')
-        self.tile_loader = TileLoader(self.window)
+
         self.double_buffer = None
         self.lat = -48.519688
         self.long = -27.606899
@@ -38,35 +39,42 @@ class MyApp(object):
         self.dx = 0
         self.dy = 0
         # Connect signals
+        self.coordlabel = go("coord_label")
         self.builder.connect_signals(self)
         self.da = go("drawingarea1")
-
-        self.window.connect("motion_notify_event", self.on_move)
-        self.window.connect("button_press_event", self.on_click)
-        self.window.connect("button_release_event", self.on_release)
-        self.window.connect("scroll_event", self.on_scroll)
-        self.window.set_events(Gdk.EventMask.EXPOSURE_MASK
+        self.da.connect("motion_notify_event", self.on_move)
+        self.da.connect("button_press_event", self.on_click)
+        self.da.connect("button_release_event", self.on_release)
+        self.da.connect("scroll_event", self.on_scroll)
+        go("ZoomIn").connect("button-press-event", self.zoom_in)
+        go("ZoomOut").connect("button-press-event", self.zoom_out)
+        self.da.set_events(Gdk.EventMask.EXPOSURE_MASK
                             | Gdk.EventMask.LEAVE_NOTIFY_MASK
                             | Gdk.EventMask.BUTTON_PRESS_MASK
                             | Gdk.EventMask.BUTTON_RELEASE_MASK
                             | Gdk.EventMask.POINTER_MOTION_MASK
                             | Gdk.EventMask.SCROLL_MASK
                             | Gdk.EventMask.POINTER_MOTION_HINT_MASK)
-        self.window.resize(256,256)
+        #self.window.resize(256,256)
         # Everything is ready
+        self.tile_loader = TileLoader(self.window)
         self.window.show()
+
         self.update_loop()
+        print "init done"
 
     def update_loop(self):
+        #print "update"
         self.window.queue_draw()
+        self.coordlabel.set_text("Long: {0} \n Lat: {1}".format(self.long,self.lat))
         GLib.timeout_add_seconds(1, self.update_loop)
 
-    def zoom_in(self):
+    def zoom_in(self,widget = None,event = None):
         self.zoom+=1
         if self.zoom>20:
             self.zoom = 20
 
-    def zoom_out(self):
+    def zoom_out(self,widget = None,event = None):
         self.zoom-=1
         if self.zoom < 1:
             self.zoom = 1
@@ -142,6 +150,7 @@ class MyApp(object):
         Gtk.main_quit()
 
     def on_draw(self, widget, cr):
+        #print "starting to draw"
         """Throw double buffer into widget drawable"""
         if self.double_buffer is not None:
             self.draw_tiles()
@@ -149,12 +158,13 @@ class MyApp(object):
             cr.paint()
         else:
             print('Invalid double buffer')
+        #print "done drawing"
         return False
 
 
     def on_configure(self, widget, event, data=None):
         """Configure the double buffer based on size of the widget"""
-
+        print "reconfiguring"
         # Destroy previous buffer
         if self.double_buffer is not None:
             self.double_buffer.finish()
@@ -169,9 +179,10 @@ class MyApp(object):
 
         # Initialize the buffer
         self.draw_tiles()
-
+        print "config done"
         return False
 
 if __name__ == '__main__':
     gui = MyApp()
+    #pdb.set_trace()
     Gtk.main()
