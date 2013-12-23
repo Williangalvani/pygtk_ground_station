@@ -30,6 +30,7 @@ class MyApp(object):
         self.double_buffer = None
         self.longitude = -48.519688
         self.latitude = -27.606899
+        self.points = [(self.longitude,self.latitude)]
         self.zoom = 11
         self.button = 0
         self.x,self.y = 0,0
@@ -67,7 +68,7 @@ class MyApp(object):
     def update_loop(self):
         #print "update"
         self.window.queue_draw()
-        self.coordlabel.set_text("Long: {0} \n Lat: {1}".format(self.latitude,self.longitude))
+        self.coordlabel.set_text("Long: {0} \n Lat: {1}\nPending tiles: {2}".format(self.latitude,self.longitude,len(self.tile_loader.pending_tiles)+len(self.tile_loader.loading_tiles)))
         GLib.timeout_add_seconds(1, self.update_loop)
 
     def zoom_in(self,widget = None,event = None):
@@ -108,16 +109,44 @@ class MyApp(object):
 
     def draw_center_circle(self,cr,x_pos,y_pos):
         cr.set_line_width(2)
-        cr.set_source_rgb(0.7, 0.2, 0.0)
+        cr.set_source_rgb(1, 0, 0)
 
         size = 10
 
+        cr.move_to(x_pos,y_pos)
         cr.translate(size/2, size/2)
         cr.arc(x_pos-size/2, y_pos-size/2, 5, 0, 2*math.pi)
         cr.stroke_preserve()
 
-        #cr.set_source_rgb(0.3, 0.4, 0.6)
+        cr.set_source_rgb(0, 0, 0)
+        #cr.fill
+
+
+    def draw_cross(self,cr,x_pos,y_pos):
+        cr.set_line_width(1)
+        cr.set_source_rgb(0, 0, 0)
+
+        size = 10
+
+        cr.move_to(x_pos,y_pos+10)
+        cr.line_to(x_pos,y_pos-10)
+        cr.move_to(x_pos+10,y_pos)
+        cr.line_to(x_pos-10,y_pos)
+
+        #cr.translate(size/2, size/2)
+        #cr.arc(x_pos-size/2, y_pos-size/2, 5, 0, 2*math.pi)
+        #cr.stroke_preserve()
+
+        #cr.set_source_rgb(0, 0, 0)
         #cr.fill()
+
+
+
+
+    def draw_points(self,cr):
+        for point in self.points:
+            x,y = self.tile_loader.dcord_to_dpix(point[0],self.longitude,point[1],self.latitude,self.zoom)
+            self.draw_center_circle(cr,x+self.width/2,y+self.height/2)
 
 
     def draw_tiles(self):
@@ -154,7 +183,8 @@ class MyApp(object):
                 tile_number = 0
                 line_number += 1
 
-            self.draw_center_circle(cc,x_center,y_center)
+            self.draw_cross(cc,x_center,y_center)
+            self.draw_points(cc)
 
             db.flush()
 
