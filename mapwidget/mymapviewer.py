@@ -9,6 +9,7 @@ from gi.repository import Gdk
 from math import ceil
 from gi.repository import GLib
 from datetime import datetime
+import math
 #   import pdb
 
 class MyApp(object):
@@ -27,8 +28,8 @@ class MyApp(object):
         self.window = go('window')
 
         self.double_buffer = None
-        self.lat = -48.519688
-        self.long = -27.606899
+        self.longitude = -48.519688
+        self.latitude = -27.606899
         self.zoom = 11
         self.button = 0
         self.x,self.y = 0,0
@@ -66,7 +67,7 @@ class MyApp(object):
     def update_loop(self):
         #print "update"
         self.window.queue_draw()
-        self.coordlabel.set_text("Long: {0} \n Lat: {1}".format(self.long,self.lat))
+        self.coordlabel.set_text("Long: {0} \n Lat: {1}".format(self.latitude,self.longitude))
         GLib.timeout_add_seconds(1, self.update_loop)
 
     def zoom_in(self,widget = None,event = None):
@@ -100,10 +101,23 @@ class MyApp(object):
         dy = y - self.pointer_y
         self.pointer_x, self.pointer_y = x, y
         if self.button == 1:
-            dlat, dlong = self.tile_loader.dpix_to_dcoord(dx, self.long, dy, self.zoom)
-            self.lat -= dlat
-            self.long -= dlong
+            dlongitude, dlatitude = self.tile_loader.dpix_to_dcoord(dx, self.latitude, dy, self.zoom)
+            self.longitude -= dlongitude
+            self.latitude -= dlatitude
             self.window.queue_draw()
+
+    def draw_center_circle(self,cr,x_pos,y_pos):
+        cr.set_line_width(2)
+        cr.set_source_rgb(0.7, 0.2, 0.0)
+
+        size = 10
+
+        cr.translate(size/2, size/2)
+        cr.arc(x_pos-size/2, y_pos-size/2, 5, 0, 2*math.pi)
+        cr.stroke_preserve()
+
+        #cr.set_source_rgb(0.3, 0.4, 0.6)
+        #cr.fill()
 
 
     def draw_tiles(self):
@@ -116,13 +130,13 @@ class MyApp(object):
             tiles_y = int(ceil(span_y/256.0))
 
             cc = cairo.Context(db)
-            tiles = self.tile_loader.load_area(self.long,self.lat,self.zoom,tiles_x,tiles_y)
+            tiles = self.tile_loader.load_area(self.latitude,self.longitude,self.zoom,tiles_x,tiles_y)
             tile_number=0
             line_number=0
 
             x_center = self.width/2# - 128
             y_center = self.height/2# - 128
-            offset_x,offset_y = self.tile_loader.gmap_tile_xy_from_coord(self.long,self.lat,self.zoom)
+            offset_x,offset_y = self.tile_loader.gmap_tile_xy_from_coord(self.latitude,self.longitude,self.zoom)
 
 
             xtiles = len(tiles[0])
@@ -139,6 +153,8 @@ class MyApp(object):
                     tile_number += 1
                 tile_number = 0
                 line_number += 1
+
+            self.draw_center_circle(cc,x_center,y_center)
 
             db.flush()
 
