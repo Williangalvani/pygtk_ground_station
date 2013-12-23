@@ -15,6 +15,11 @@ def ensure_dir(d):
         os.makedirs(d)
 
 
+def try_to_remove(filename):
+    try:
+        os.remove(filename)
+    except:
+        print "could not delete" , filename
 
 class ImageLoader(object):
     def __init__(self):
@@ -52,7 +57,8 @@ class ImageLoader(object):
 
             except Exception, e:
                 print "erro no Cache de disco!!", e, filename
-                os.remove(temp_file_name)
-                os.remove(filename)
                 print traceback.format_exc()
+
+            try_to_remove(temp_file_name)
+
         return filename
